@@ -60,7 +60,7 @@ function applyQueryFilters(q, { category, city, price, sort }) {
 }
 
 export async function getRestaurants(db = db, filters = {}) {
-  let q = query(collectrion(db, "restaurants"));
+  let q = query(collection(db, "restaurants"));
 
   q = applyQueryFilters(q, filters);
   const results = await getDocs(q);
