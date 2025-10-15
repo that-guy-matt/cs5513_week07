@@ -5,7 +5,7 @@ import { getAuthenticatedAppForUser } from "@/src/lib/firebase/serverApp";
 import { getFirestore } from "firebase/firestore";
 
 export async function GeminiSummary({ restaurantId }) {
-  const { firebaseSeerverApp } = await getAuthenticatedAppForUser();
+  const { firebaseServerApp } = await getAuthenticatedAppForUser();
   const reviews = await getReviewsByRestaurantId(
     getFirestore(firebaseServerApp),
     restaurantId
