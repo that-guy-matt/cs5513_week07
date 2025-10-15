@@ -27,6 +27,7 @@ export async function updateRestaurantImage(restaurantId, image) {
 async function uploadImage(restaurantId, image) {
     const filePath = `images/${restaurantId}/${image.name}`;
     const newImageRef = ref(storage, filePath);
+    await uploadBytesResumable(newImageRef, image);
 
     return await getDownloadURL(newImageRef);
 }
