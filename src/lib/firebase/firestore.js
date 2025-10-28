@@ -51,6 +51,8 @@ const updateWithRating = async (
     numRatings: newNumRatings,
     sumRating: newSumRating,
     avgRating: newAverage,
+    // add new field for userId making review to use as security check
+    lastReviewUserId: review.userId,
   });
 
   // create new rating subdocument

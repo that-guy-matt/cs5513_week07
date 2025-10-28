@@ -16,6 +16,7 @@ export async function handleReviewFormSubmission(data) {
         rating: data.get("rating"),
 
         // This came from a hidden form field.
-        userId: data.get("userId"),
+        // userId: data.get("userId"),
+        userId: currentUser.uid,
     });
 }
